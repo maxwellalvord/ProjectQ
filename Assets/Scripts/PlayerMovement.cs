@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
-    // Start is called before the first frame update
+public class Movement : MonoBehaviour
+{   
+    [SerializeField] float mainThrust = 10000000000f;
+    
+
+    Rigidbody rb; 
+
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        ProcessThrust();
     }
-}
+
+    void ProcessThrust()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            StartThursting();
+        }
+      
+    }
+
+    void StartThursting()
+    {
+        rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+        }
+    }
