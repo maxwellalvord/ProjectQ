@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {   
-    [SerializeField] float mainThrust = 10000000000f;
+    [SerializeField] float mainThrust = 1f;
     
 
     Rigidbody rb; 
