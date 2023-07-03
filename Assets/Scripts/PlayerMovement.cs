@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         ProcessThrust();
+        ProcessTurm();
     }
 
     void ProcessThrust()
@@ -24,6 +25,18 @@ public class PlayerMovement : MonoBehaviour
             StartThursting();
         }
       
+    }
+     void ProcessTurn()
+    {
+        if (Input.GetKey(KeyCode.A))
+        {
+            TurnLeft();
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            TurnRight();
+        }
+       
     }
 
     void StartThursting()
